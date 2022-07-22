@@ -1,0 +1,42 @@
+- hosts: localhost
+  become: true
+  tasks:
+    - name: Install system packages
+      apt:
+        name:
+          - git
+          - curl
+          - build-essential
+          - pkg-config
+          - libssl-dev
+        state: latest
+      tags:
+        - system
+
+    - name: Install zsh
+      apt: name=zsh
+      tags:
+        - zsh
+
+    - name: Change shell
+      shell: chsh -s `which zsh`
+      tags:
+        - zsh
+
+    - name: Install oh-my-zsh
+      shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+      tags:
+        - zsh
+
+    - name: Install rust
+      shell: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+
+    - name: Install tmux
+      apt: name=tmux
+
+    # - name: Install tailscale
+    #   shell:
+    #     - curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/jammy.noarmor.gpg | tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
+    #     - curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/jammy.tailscale-keyring.list | tee /etc/apt/sources.list.d/tailscale.list
+    #     - apt-get update
+    #     - apt-get install -y tailscale
