@@ -1,4 +1,4 @@
-FROM --platform=arm64 ubuntu:jammy
+FROM ubuntu:jammy
 
 RUN apt update \
   && apt install -y software-properties-common \
