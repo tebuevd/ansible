@@ -13,6 +13,9 @@
       tags:
         - system
 
+    - name: Install mosh
+      apt: name=mosh
+
     - name: Install zsh
       apt: name=zsh
       tags:
@@ -33,6 +36,14 @@
 
     - name: Install tmux
       apt: name=tmux
+
+    - name: Install neovim
+      apt: name=neovim
+
+    - name: Install volta
+      shell: curl https://get.volta.sh | bash && export PATH="$HOME/.volta:$PATH"
+      tags:
+        - node
 
     # - name: Install tailscale
     #   shell:

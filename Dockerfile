@@ -9,3 +9,5 @@ WORKDIR /ansible
 COPY ./setup.yml .
 
 RUN ansible-playbook setup.yml
+
+CMD ["zsh"]
