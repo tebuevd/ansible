@@ -13,6 +13,10 @@
       tags:
         - system
 
+    - name: Install dev tools
+      apt:
+        name: ["fzf", "tmux", "stow", "neovim"]
+
     - name: Install mosh
       apt: name=mosh
 
@@ -33,12 +37,6 @@
 
     - name: Install rust
       shell: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-
-    - name: Install tmux
-      apt: name=tmux
-
-    - name: Install neovim
-      apt: name=neovim
 
     - name: Install volta
       shell: curl https://get.volta.sh | bash && export PATH="$HOME/.volta:$PATH"
