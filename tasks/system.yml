@@ -1,0 +1,20 @@
+- hosts: localhost
+  become: true
+  tasks:
+    - name: Install system packages
+      apt:
+        name:
+          - git
+          - curl
+          - build-essential
+          - pkg-config
+          - libssl-dev
+        state: latest
+      tags:
+        - system
+
+    - name: Install dev tools
+      apt:
+        name: ["fzf", "tmux", "stow", "neovim"]
+      tags:
+        - system
