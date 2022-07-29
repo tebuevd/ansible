@@ -1,0 +1,8 @@
+- hosts: localhost
+  become: true
+  tasks:
+    - name: Install dev tools
+      apt:
+        name: ["fzf", "tmux", "stow", "neovim", "tldr"]
+      tags:
+        - system

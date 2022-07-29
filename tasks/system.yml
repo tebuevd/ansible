@@ -12,9 +12,3 @@
         state: latest
       tags:
         - system
-
-    - name: Install dev tools
-      apt:
-        name: ["fzf", "tmux", "stow", "neovim"]
-      tags:
-        - system

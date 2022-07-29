@@ -8,10 +8,3 @@
       shell: curl https://get.volta.sh | bash && export PATH="$HOME/.volta:$PATH"
       tags:
         - node
-
-    # - name: Install tailscale
-    #   shell:
-    #     - curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/jammy.noarmor.gpg | tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
-    #     - curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/jammy.tailscale-keyring.list | tee /etc/apt/sources.list.d/tailscale.list
-    #     - apt-get update
-    #     - apt-get install -y tailscale

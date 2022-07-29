@@ -12,6 +12,7 @@
         - zsh
 
     - name: Install oh-my-zsh
+      become_user: dinislam
       shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
       tags:
         - zsh
