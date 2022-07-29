@@ -3,6 +3,6 @@
   tasks:
     - name: Install dev tools
       apt:
-        name: ["fzf", "tmux", "stow", "neovim", "tldr"]
+        name: ["fzf", "tmux", "stow", "neovim", "tldr", "mosh"]
       tags:
         - system

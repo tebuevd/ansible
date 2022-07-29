@@ -1,0 +1,17 @@
+- hosts: localhost
+  become: true
+  tasks:
+    - name: Install volta
+      become_user: dinislam
+      shell: curl https://get.volta.sh | bash
+      tags:
+        - node
+
+- hosts: localhost
+  become: true
+  tasks:
+    - name: Install node tooling
+      become_user: dinislam
+      shell: PATH="$HOME/.volta/bin:$PATH" VOLTA_HOME="$HOME/.volta" volta install node@16 npm@8 yarn@1 typescript esbuild tsx rimraf zx
+      tags:
+        - node

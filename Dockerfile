@@ -29,4 +29,7 @@ RUN ansible-playbook dev.yml
 COPY ./tasks/zsh.yml .
 RUN ansible-playbook zsh.yml
 
+COPY ./tasks/node.yml .
+RUN ansible-playbook node.yml
+
 CMD ["zsh"]
